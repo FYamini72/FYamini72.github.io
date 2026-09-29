@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="320" viewBox="0 0 640 320" role="img" aria-label="نمای موقت سامانه خدمات و پشتیبانی">
+  <rect width="640" height="320" fill="#e9edf2"/>
+  <rect x="14" y="13" width="612" height="294" rx="8" fill="#fff" stroke="#d8e0e9"/>
+  <rect x="14" y="13" width="612" height="34" rx="8" fill="#fff"/>
+  <path d="M14 47H626" stroke="#e6ebf1"/>
+  <circle cx="35" cy="30" r="7" fill="#2e83e9"/><rect x="50" y="27" width="75" height="6" rx="3" fill="#a3afbe"/>
+  <rect x="504" y="25" width="48" height="9" rx="4" fill="#edf2f7"/><circle cx="572" cy="30" r="6" fill="#b7c4d0"/><circle cx="599" cy="30" r="10" fill="#43ac79"/>
+  <rect x="14" y="47" width="95" height="260" fill="#f7f9fc"/>
+  <rect x="28" y="67" width="47" height="5" rx="2" fill="#8898a8"/>
+  <rect x="24" y="87" width="74" height="22" rx="4" fill="#e4f0fd"/><rect x="34" y="95" width="52" height="5" rx="2" fill="#4b92e3"/>
+  <g fill="#aab7c5"><rect x="34" y="124" width="52" height="5" rx="2"/><rect x="34" y="148" width="43" height="5" rx="2"/><rect x="34" y="172" width="50" height="5" rx="2"/><rect x="34" y="196" width="39" height="5" rx="2"/><rect x="34" y="220" width="49" height="5" rx="2"/></g>
+  <rect x="133" y="67" width="147" height="8" rx="4" fill="#42566c"/><rect x="133" y="84" width="224" height="5" rx="2" fill="#c6d0da"/>
+  <g><rect x="133" y="109" width="106" height="68" rx="6" fill="#eaf4ff"/><rect x="247" y="109" width="106" height="68" rx="6" fill="#eaf4ff"/><rect x="361" y="109" width="106" height="68" rx="6" fill="#eaf4ff"/><rect x="475" y="109" width="127" height="68" rx="6" fill="#eaf4ff"/></g>
+  <g fill="#6a91bd"><rect x="146" y="122" width="53" height="5" rx="2"/><rect x="260" y="122" width="58" height="5" rx="2"/><rect x="374" y="122" width="62" height="5" rx="2"/><rect x="489" y="122" width="70" height="5" rx="2"/></g>
+  <g fill="#3489ed"><rect x="146" y="140" width="38" height="16" rx="3"/><rect x="260" y="140" width="38" height="16" rx="3"/><rect x="374" y="140" width="38" height="16" rx="3"/><rect x="489" y="140" width="38" height="16" rx="3"/></g>
+  <rect x="133" y="191" width="293" height="94" rx="6" fill="#fff" stroke="#e2e8ef"/><rect x="147" y="203" width="98" height="6" rx="3" fill="#63758b"/>
+  <g stroke="#e9eef3"><path d="M147 226H411M147 244H411M147 262H411"/></g>
+  <g fill="#a8b8c9"><rect x="153" y="231" width="64" height="5" rx="2"/><rect x="153" y="249" width="93" height="5" rx="2"/><rect x="153" y="267" width="75" height="5" rx="2"/></g>
+  <g fill="#76b9f4"><rect x="294" y="231" width="61" height="6" rx="3"/><rect x="294" y="249" width="47" height="6" rx="3"/><rect x="294" y="267" width="71" height="6" rx="3"/></g>
+  <rect x="439" y="191" width="163" height="94" rx="6" fill="#fff" stroke="#e2e8ef"/><rect x="451" y="202" width="74" height="6" rx="3" fill="#63758b"/>
+  <rect x="451" y="219" width="139" height="13" rx="3" fill="#fff3e5"/><rect x="451" y="236" width="139" height="13" rx="3" fill="#fff0dc"/><rect x="451" y="253" width="139" height="19" rx="3" fill="#f6ae45"/>
+</svg>

@@ -1,0 +1,564 @@
+<!doctype html>
+<html lang="fa" dir="rtl" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      (function () {
+        var locale = "fa";
+        var theme = "dark";
+        try {
+          var savedLocale = localStorage.getItem("farzam-portfolio-locale");
+          if (savedLocale === "fa" || savedLocale === "en") locale = savedLocale;
+          var savedTheme = localStorage.getItem("farzam-portfolio-theme");
+          if (savedTheme === "dark" || savedTheme === "light") theme = savedTheme;
+        } catch (error) {}
+        document.documentElement.lang = locale;
+        document.documentElement.dir = locale === "fa" ? "rtl" : "ltr";
+        document.documentElement.dataset.locale = locale;
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
+    <meta name="theme-color" content="#101824" />
+    <meta
+      name="description"
+      content="فرزام یمینی، توسعه‌دهنده Backend با .NET، معمار نرم‌افزار و رهبر فنی."
+    />
+    <title>فرزام یمینی | توسعه‌دهنده Backend</title>
+    <script src="translations.js"></script>
+    <link
+      id="bootstrap-stylesheet"
+      rel="stylesheet"
+      href="assets/vendor/bootstrap.rtl.min.css"
+      data-rtl-href="assets/vendor/bootstrap.rtl.min.css"
+      data-ltr-href="assets/vendor/bootstrap.min.css"
+    />
+    <script>
+      var initialDictionary = window.portfolioI18n.locales[document.documentElement.lang];
+      if (initialDictionary) {
+        document.title = initialDictionary.meta.title;
+        document.querySelector('meta[name="description"]').content =
+          initialDictionary.meta.description;
+        if (initialDictionary.bootstrap === "ltr") {
+          document.getElementById("bootstrap-stylesheet").href = "assets/vendor/bootstrap.min.css";
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <svg class="icon-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6" /></symbol>
+      <symbol id="i-download" viewBox="0 0 24 24">
+        <path d="M12 3v12m-4-4 4 4 4-4M4 17v3h16v-3" />
+      </symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6" /></symbol>
+      <symbol id="i-calendar" viewBox="0 0 24 24">
+        <rect x="3" y="5" width="18" height="16" rx="2" />
+        <path d="M7 3v4m10-4v4M3 10h18" />
+      </symbol>
+      <symbol id="i-code" viewBox="0 0 24 24">
+        <path d="m8 5-7 7 7 7m8-14 7 7-7 7m-3-17-3 20" />
+      </symbol>
+      <symbol id="i-users" viewBox="0 0 24 24">
+        <circle cx="9" cy="8" r="3" />
+        <path d="M3 20v-2a6 6 0 0 1 12 0v2H3Zm13-15a3 3 0 0 1 0 6m2 9h3v-2a6 6 0 0 0-4-5.66" />
+      </symbol>
+      <symbol id="i-briefcase" viewBox="0 0 24 24">
+        <rect x="2" y="7" width="20" height="14" rx="2" />
+        <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M2 13c6 3 14 3 20 0m-10 0v3" />
+      </symbol>
+      <symbol id="i-database" viewBox="0 0 24 24">
+        <ellipse cx="12" cy="5" rx="9" ry="3" />
+        <path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5M3 12c0 1.7 4 3 9 3s9-1.3 9-3" />
+      </symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24">
+        <rect x="2" y="4" width="20" height="16" rx="2" />
+        <path d="m3 6 9 7 9-7" />
+      </symbol>
+      <symbol id="i-github" viewBox="0 0 24 24">
+        <path
+          d="M9 20c-4.2 1.4-4.2-2-6-2.5M15 22v-3.6a3.1 3.1 0 0 0-.8-2.4c2.8-.3 5.8-1.4 5.8-6.2a4.8 4.8 0 0 0-1.3-3.3 4.4 4.4 0 0 0-.1-3.3S17.5 2.9 15 4.6a11.1 11.1 0 0 0-6 0C6.5 2.9 5.4 3.2 5.4 3.2a4.4 4.4 0 0 0-.1 3.3A4.8 4.8 0 0 0 4 9.8c0 4.8 3 5.9 5.8 6.2A3.1 3.1 0 0 0 9 18.4V22"
+        />
+      </symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" /></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path d="M5 5 19 19M19 5 5 19" /></symbol>
+      <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" /><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" /></symbol>
+      <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5 8.5 8.5 0 1 0 20.5 14.2Z" /></symbol>
+    </svg>
+
+    <header class="site-header">
+      <div class="site-container header-inner">
+        <a class="brand" href="#home" data-i18n="brand">فرزام یمینی</a>
+        <nav
+          class="main-nav"
+          id="main-nav"
+          aria-label="ناوبری اصلی"
+          data-i18n-aria-label="main-navigation"
+        >
+          <a class="active" href="#home" data-i18n="nav-home">خانه</a>
+          <a href="#skills" data-i18n="nav-skills">تخصص‌ها</a>
+          <a href="#about" data-i18n="nav-about">درباره من</a>
+          <a href="#experience" data-i18n="nav-experience">تجربه کاری</a>
+          <a href="#projects" data-i18n="nav-projects">پروژه‌ها</a>
+          <a href="#technologies" data-i18n="nav-technologies">فناوری‌ها</a>
+          <a href="#contact" data-i18n="nav-contact">تماس با من</a>
+        </nav>
+        <div class="header-actions">
+          <div
+            class="language-switch"
+            role="group"
+            aria-label="زبان"
+            data-i18n-aria-label="language-selection"
+          >
+            <button
+              class="language-button active"
+              type="button"
+              data-locale="fa"
+              aria-pressed="true"
+            >
+              FA
+            </button>
+            <button class="language-button" type="button" data-locale="en" aria-pressed="false">
+              EN
+            </button>
+          </div>
+          <button class="theme-toggle" type="button" aria-label="فعال‌سازی تم روشن" aria-pressed="false" data-i18n-aria-label="theme-toggle-light">
+            <svg class="icon"><use href="#i-sun"></use></svg>
+          </button>
+          <button
+            class="mobile-menu-button"
+            type="button"
+            aria-expanded="false"
+            aria-controls="main-nav"
+            aria-label="باز کردن منو"
+            data-i18n-aria-label="mobile-menu-open"
+          >
+            <svg class="icon"><use href="#i-menu"></use></svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="home" class="site-container">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-content">
+          <h1 id="hero-title" data-i18n="hero-name">فرزام یمینی</h1>
+          <p class="hero-role" data-i18n="hero-role">توسعه‌دهنده Backend با .NET</p>
+          <p class="hero-subrole" data-i18n="hero-subrole">معمار نرم‌افزار و رهبر فنی</p>
+          <p class="hero-description prose-text" data-i18n="hero-description">
+            با بیش از ۹ سال تجربه حرفه‌ای در توسعه نرم‌افزارهای تحت وب و معماری سیستم‌های
+            مقیاس‌پذیر، به دنبال ایجاد راه‌حل‌های پایدار و کارآمد با استفاده از تکنولوژی‌های مدرن
+            هستم.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#projects"
+              ><svg class="icon"><use href="#i-arrow"></use></svg
+              ><span data-i18n="hero-projects">مشاهده پروژه‌ها</span></a
+            >
+            <button
+              class="button button-outline unconfigured"
+              type="button"
+              data-config-key="resume"
+              aria-disabled="true"
+            >
+              <svg class="icon"><use href="#i-download"></use></svg
+              ><span data-i18n="hero-resume">دانلود رزومه</span>
+            </button>
+          </div>
+        </div>
+        <picture class="hero-photo-wrap">
+          <source
+            media="(max-width: 767.98px)"
+            srcset="assets/hero-options/hero-01-studio-navy-mobile-centered.jpg"
+            type="image/jpeg"
+          />
+          <img
+            class="hero-photo"
+            src="assets/hero-options/hero-01-studio-navy.jpg"
+            alt="پرتره فرزام یمینی"
+            data-i18n-alt="hero-image"
+            loading="eager"
+            onerror="this.classList.add('image-unavailable')"
+          />
+        </picture>
+      </section>
+
+      <section id="skills" class="expertise-panel" aria-labelledby="expertise-title">
+        <h2 id="expertise-title" class="panel-heading" data-i18n="expertise-title">
+          تخصص‌های اصلی
+        </h2>
+        <div class="skill-pills" aria-label="تخصص‌های اصلی" data-i18n-aria-label="core-expertise">
+          <div class="skill-row">
+            <span class="skill-pill">Entity Framework Core</span>
+            <span class="skill-pill">SQL Server</span>
+            <span class="skill-pill">Web API</span>
+            <span class="skill-pill">ASP.NET Core</span>
+            <span class="skill-pill">.NET</span>
+            <span class="skill-pill">C#</span>
+            <span class="skill-pill">Technical Leadership</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-pill">Security</span>
+            <span class="skill-pill">Software Architecture</span>
+            <span class="skill-pill">Blazor</span>
+            <span class="skill-pill">JWT</span>
+            <span class="skill-pill">MediatR</span>
+            <span class="skill-pill">CQRS</span>
+            <span class="skill-pill">Clean Architecture</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="about-section" aria-labelledby="about-title">
+        <div class="about-copy">
+          <h2 id="about-title" class="section-heading" data-i18n="about-title">درباره من</h2>
+          <p class="prose-text" data-i18n="about-copy">
+            من فرزام یمینی هستم، توسعه‌دهنده Backend با .NET. در حال حاضر به عنوان معمار نرم‌افزار و
+            رهبر فنی فعالیت می‌کنم. در طول این سال‌ها در پروژه‌های مختلفی با معماری تمیز، الگوهای
+            مدرن و تیم‌های حرفه‌ای همکاری داشته‌ام و همواره تلاش کرده‌ام تا با ارائه راه‌حل‌های
+            بهینه، تأثیر مثبتی در موفقیت پروژه‌ها داشته باشم.
+          </p>
+          <ul class="about-facts">
+            <li>
+              <span class="fact-icon"
+                ><svg class="icon"><use href="#i-calendar"></use></svg></span
+              ><span data-i18n="fact-years">۹+ سال تجربه حرفه‌ای</span>
+            </li>
+            <li>
+              <span class="fact-icon"
+                ><svg class="icon"><use href="#i-code"></use></svg></span
+              ><span data-i18n="fact-dev">توسعه‌دهنده Backend</span>
+            </li>
+            <li>
+              <span class="fact-icon"
+                ><svg class="icon"><use href="#i-users"></use></svg></span
+              ><span data-i18n="fact-architect">معمار نرم‌افزار و رهبر فنی</span>
+            </li>
+          </ul>
+        </div>
+        <aside class="values-card" aria-labelledby="values-title">
+          <h3 id="values-title" data-i18n="values-title">آنچه در مسیر حرفه‌ای‌ام مهم است</h3>
+          <ul>
+            <li>
+              <svg class="icon"><use href="#i-check"></use></svg
+              ><span data-i18n="value-1">طراحی معماری‌های مقیاس‌پذیر</span>
+            </li>
+            <li>
+              <svg class="icon"><use href="#i-check"></use></svg
+              ><span data-i18n="value-2">انتخاب تکنولوژی مناسب</span>
+            </li>
+            <li>
+              <svg class="icon"><use href="#i-check"></use></svg
+              ><span data-i18n="value-3">امنیت و پایداری سیستم‌ها</span>
+            </li>
+            <li>
+              <svg class="icon"><use href="#i-check"></use></svg
+              ><span data-i18n="value-4">تحلیل نیازمندی‌ها</span>
+            </li>
+            <li>
+              <svg class="icon"><use href="#i-check"></use></svg
+              ><span data-i18n="value-5">رهبری و کار تیمی</span>
+            </li>
+          </ul>
+          <p class="values-quote prose-text" data-i18n="values-quote">
+            «تکنولوژی زمانی ارزشمند است که مشکلات واقعی را حل کند.»
+          </p>
+        </aside>
+      </section>
+
+      <section
+        id="experience"
+        class="content-section experience-section"
+        aria-labelledby="experience-title"
+      >
+        <div class="section-topline">
+          <h2 id="experience-title" class="section-heading" data-i18n="experience-title">
+            تجربه کاری
+          </h2>
+          <button
+            class="section-more unconfigured"
+            type="button"
+            data-config-key="experience"
+            aria-disabled="true"
+            data-i18n="view-all"
+          >
+            مشاهده همه
+          </button>
+        </div>
+        <div class="experience-timeline">
+          <article class="experience-item">
+            <div class="experience-icon">
+              <svg class="icon"><use href="#i-briefcase"></use></svg>
+            </div>
+            <span class="timeline-dot"></span>
+            <div class="experience-text">
+              <h3 data-i18n="job-1-title">شرکت پویانگار ارتباط سپهر (پیتا)</h3>
+              <p class="experience-role">Software Architect &amp; Technical Lead</p>
+              <p class="prose-text" data-i18n="job-1-desc">
+                معماری و توسعه راهکارهای مقیاس‌پذیر، انتخاب تکنولوژی، رهبری تیم توسعه و بهبود
+                فرآیندهای فنی.
+              </p>
+            </div>
+          </article>
+          <article class="experience-item">
+            <div class="experience-icon">
+              <svg class="icon"><use href="#i-code"></use></svg>
+            </div>
+            <span class="timeline-dot"></span>
+            <div class="experience-text">
+              <h3 data-i18n="job-2-title">توسعه‌دهنده ارشد .NET</h3>
+              <p class="prose-text" data-i18n="job-2-desc">
+                توسعه و نگهداری سرویس‌های تحت وب، بهینه‌سازی عملکرد و همکاری در پروژه‌های بزرگ و
+                تیمی.
+              </p>
+            </div>
+          </article>
+          <article class="experience-item">
+            <div class="experience-icon">
+              <svg class="icon"><use href="#i-database"></use></svg>
+            </div>
+            <span class="timeline-dot"></span>
+            <div class="experience-text">
+              <h3 data-i18n="job-3-title">توسعه‌دهنده .NET</h3>
+              <p class="prose-text" data-i18n="job-3-desc">
+                توسعه وب‌اپ‌ها و سیستم‌های سازمانی با ASP.NET Core و SQL Server.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section
+        id="projects"
+        class="content-section projects-section"
+        aria-labelledby="projects-title"
+      >
+        <div class="section-topline">
+          <h2 id="projects-title" class="section-heading" data-i18n="projects-title">
+            نمونه پروژه‌ها
+          </h2>
+          <button
+            class="section-more unconfigured"
+            type="button"
+            data-config-key="all-projects"
+            aria-disabled="true"
+            data-i18n="view-all"
+          >
+            مشاهده همه
+          </button>
+        </div>
+        <div class="projects-grid row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+          <div class="col">
+            <article class="project-card">
+              <div class="project-image">
+                <img
+                  src="assets/project-services-placeholder.svg"
+                  alt="نمای موقت سامانه خدمات و پشتیبانی"
+                  data-i18n-alt="project-1-image"
+                  loading="lazy"
+                  onerror="this.classList.add('image-unavailable')"
+                />
+              </div>
+              <h3 data-i18n="project-1-title">سامانه خدمات و پشتیبانی</h3>
+              <p>ASP.NET Core | Clean Architecture | CQRS</p>
+              <div class="project-bottom">
+                <span class="project-category" data-i18n="project-1-category">خدمات آنلاین</span
+                ><button
+                  class="icon-button unconfigured"
+                  type="button"
+                  data-config-key="project-1"
+                  aria-label="جزئیات سامانه خدمات و پشتیبانی"
+                  data-i18n-aria-label="project-1-details"
+                  aria-disabled="true"
+                >
+                  <svg class="icon"><use href="#i-arrow"></use></svg>
+                </button>
+              </div>
+            </article>
+          </div>
+          <div class="col">
+            <article class="project-card">
+              <div class="project-image">
+                <img
+                  src="assets/project-lms-placeholder.svg"
+                  alt="نمای موقت سامانه خدمات آموزشی"
+                  data-i18n-alt="project-2-image"
+                  loading="lazy"
+                  onerror="this.classList.add('image-unavailable')"
+                />
+              </div>
+              <h3 data-i18n="project-2-title">سامانه خدمات آموزشی (LMS)</h3>
+              <p>ASP.NET Core MVC | EF Core | SQL Server</p>
+              <div class="project-bottom">
+                <span class="project-category" data-i18n="project-2-category">آموزشی</span
+                ><button
+                  class="icon-button unconfigured"
+                  type="button"
+                  data-config-key="project-2"
+                  aria-label="جزئیات سامانه خدمات آموزشی"
+                  data-i18n-aria-label="project-2-details"
+                  aria-disabled="true"
+                >
+                  <svg class="icon"><use href="#i-arrow"></use></svg>
+                </button>
+              </div>
+            </article>
+          </div>
+          <div class="col">
+            <article class="project-card">
+              <div class="project-image">
+                <img
+                  src="assets/project-kms-placeholder.svg"
+                  alt="نمای موقت سیستم مدیریت دانش"
+                  data-i18n-alt="project-3-image"
+                  loading="lazy"
+                  onerror="this.classList.add('image-unavailable')"
+                />
+              </div>
+              <h3 data-i18n="project-3-title">سیستم مدیریت دانش (KMS)</h3>
+              <p>ASP.NET Core Web API | Blazor | MudBlazor</p>
+              <div class="project-bottom">
+                <span class="project-category" data-i18n="project-3-category">سیستم سازمانی</span
+                ><button
+                  class="icon-button unconfigured"
+                  type="button"
+                  data-config-key="project-3"
+                  aria-label="جزئیات سیستم مدیریت دانش"
+                  data-i18n-aria-label="project-3-details"
+                  aria-disabled="true"
+                >
+                  <svg class="icon"><use href="#i-arrow"></use></svg>
+                </button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="technologies"
+        class="content-section technologies-section"
+        aria-labelledby="technologies-title"
+      >
+        <div class="section-topline">
+          <h2 id="technologies-title" class="section-heading" data-i18n="technologies-title">
+            تکنولوژی‌ها و ابزارها
+          </h2>
+          <button
+            class="section-more unconfigured"
+            type="button"
+            data-config-key="all-technologies"
+            aria-disabled="true"
+            data-i18n="view-all"
+          >
+            مشاهده همه
+          </button>
+        </div>
+        <div class="technologies-grid">
+          <div class="technology-card">
+            <img class="technology-logo" src="assets/technology/blazor.svg" alt="" /><span
+              >Blazor</span
+            >
+          </div>
+          <div class="technology-card">
+            <img class="technology-logo" src="assets/technology/efcore.svg" alt="" /><span
+              >EF Core</span
+            >
+          </div>
+          <div class="technology-card">
+            <img class="technology-logo" src="assets/technology/sqlserver.svg" alt="" /><span
+              >SQL Server</span
+            >
+          </div>
+          <div class="technology-card">
+            <img class="technology-logo" src="assets/technology/aspnetcore.svg" alt="" /><span
+              >ASP.NET Core</span
+            >
+          </div>
+          <div class="technology-card">
+            <img class="technology-logo" src="assets/technology/dotnet.svg" alt="" /><span
+              >.NET</span
+            >
+          </div>
+          <div class="technology-card">
+            <img class="technology-logo" src="assets/technology/csharp.svg" alt="" /><span>C#</span>
+          </div>
+          <div class="technology-card">
+            <img class="technology-logo" src="assets/technology/git.svg" alt="" /><span>Git</span>
+          </div>
+          <div class="technology-card">
+            <img class="technology-logo" src="assets/technology/docker.svg" alt="" /><span
+              >Docker</span
+            >
+          </div>
+          <div class="technology-card">
+            <img
+              class="technology-logo"
+              src="assets/technology/clean-architecture.svg"
+              alt=""
+            /><span>Clean Architecture</span>
+          </div>
+          <div class="technology-card">
+            <img class="technology-logo" src="assets/technology/jwt.svg" alt="" /><span>JWT</span>
+          </div>
+          <div class="technology-card">
+            <img class="technology-logo" src="assets/technology/mediatr.svg" alt="" /><span
+              >MediatR</span
+            >
+          </div>
+          <div class="technology-card">
+            <img class="technology-logo" src="assets/technology/cqrs.svg" alt="" /><span>CQRS</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact-panel" aria-labelledby="contact-title">
+        <div class="contact-copy">
+          <h2 id="contact-title" data-i18n="contact-title">با من در ارتباط باشید</h2>
+          <p class="prose-text" data-i18n="contact-copy">
+            اگر به همکاری، پروژه جدید یا فرصت‌های شغلی مرتبط علاقه‌مند هستید، از طریق راه‌های
+            ارتباطی زیر با من در تماس باشید.
+          </p>
+        </div>
+        <div class="contact-actions">
+          <button
+            class="button button-outline social-button unconfigured"
+            type="button"
+            data-config-key="github"
+            aria-disabled="true"
+          >
+            <svg class="icon"><use href="#i-github"></use></svg><span>GitHub</span></button
+          ><button
+            class="button button-outline social-button unconfigured"
+            type="button"
+            data-config-key="linkedin"
+            aria-disabled="true"
+          >
+            <span class="linkedin-icon">in</span><span>LinkedIn</span></button
+          ><button
+            class="button button-primary email-button unconfigured"
+            type="button"
+            data-config-key="email"
+            aria-disabled="true"
+          >
+            <svg class="icon"><use href="#i-mail"></use></svg
+            ><span data-i18n="send-email">ارسال ایمیل</span>
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer site-container">
+      <div class="footer-brand">
+        <strong data-i18n="brand">فرزام یمینی</strong
+        ><span data-i18n="footer-role">توسعه‌دهنده .NET | معمار نرم‌افزار و رهبر فنی</span>
+      </div>
+      <p data-i18n="copyright">© فرزام یمینی. تمامی حقوق محفوظ است.</p>
+    </footer>
+
+    <script src="assets/vendor/jquery-3.7.1.min.js"></script>
+    <script src="assets/vendor/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="MediatR">
+  <defs><linearGradient id="a" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#55e0cb"/><stop offset="1" stop-color="#138b82"/></linearGradient></defs>
+  <path d="M24 4 40 13v22L24 44 8 35V13Z" fill="#133e48" stroke="url(#a)" stroke-width="2.5"/>
+  <path d="M14 33V17l10 8 10-8v16M19 29v-5l5 4 5-4v5" fill="none" stroke="#67e9d6" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="24" cy="14" r="2" fill="#67e9d6"/>
+</svg>
